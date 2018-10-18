@@ -1,0 +1,11 @@
+#ghi chu trong file,can phai bat che do rewrite
+RewriteEngine On
+#rewrite duong dan / hello -> index.php
+RewriteRule ^hello$ index.php
+#rewrite duong dan /lophoc/test.html ->test.php
+RewriteRule ^lophoc/test.html$ test.php
+#rewrite duong dan theo url: /test/trang-chu.html
+RewriteRule ^test/trang-chu$ index.php
+RewriteRule ^a/b/c/d$ index.php
+#thuc hien duong dan /truyen bien1/5/hello
+RewriteRule ^truyenbien1/(.*)/(.*)$ index.php?a=$1b=$2

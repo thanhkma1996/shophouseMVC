@@ -1,0 +1,73 @@
+RewriteEngine On
+RewriteRule ^trang-chu$ index.php
+RewriteRule ^quan-li-web$ admin.php
+RewriteRule ^gioi-thieu$ index.php?controller=introduce
+RewriteRule ^tin-tuc$ index.php?controller=news
+RewriteRule ^gio-hang$ index.php?controller=cart
+RewriteRule ^ki-yeu$ index.php?controller=ky
+RewriteRule ^chinh-sach$ index.php?controller=policy
+RewriteRule ^dieu-khoan$ index.php?controller=rules
+RewriteRule ^cong-tac-vien$ index.php?controller=collaborators
+
+################################################
+
+
+###################### RewriteRule chi tiet
+#rewrite danh muc san pham index.php?controller=product&id=1
+RewriteRule ^san-pham/danh-muc/(.*)/(.*)$ index.php?controller=product&id=$1
+
+#rewrite chi tiet san oham index.php?controller=product_detail&id=1
+RewriteRule ^san-pham/chi-tiet/(.*)$ index.php?controller=product_detail&id=$1
+
+#RewriteRule ^gioi-thieu/chi-tiet/(.*)$ index.php?controller=introduce_detail&id=26
+RewriteRule ^gioi-thieu/chi-tiet/(.*)$ index.php?controller=introduce_detail&id=$1
+
+############################################################################
+RewriteRule ^ki-yeu/chi-tiet/(.*)$ index.php?controller=ky_detail&id=$1
+
+RewriteRule ^tin-tuc/chi-tiet/(.*)$ index.php?controller=news_detail&id=$1
+#RewriteRule ^chinh-sach/chi-tiet/(.*)$ index.php?controller=policy_detail&id=2
+RewriteRule ^chinh-sach/chi-tiet/(.*)$ index.php?controller=policy_detail&id=$1
+
+
+RewriteRule ^dieu-khoan/chi-tiet/(.*)$ index.php?controller=policy_detail&id=$1
+
+RewriteRule ^dang-nhap$ trang-chu?controller=login
+
+RewriteRule ^dang-ki$ trang-chu?controller=register
+
+RewriteRule ^gio-hang$ index.php?controller=cart
+
+############################################################## Rewrite Trang
+RewriteRule ^san-pham/danh-muc/trang/(.*)/(.*)$ index.php?controller=product&p=$1
+RewriteRule ^gioi-thieu/trang/(.*)$ index.php?controller=introduce&p=$1
+
+RewriteRule ^chinh-sach/trang/(.*)$ index.php?controller=policy&p=$1
+
+RewriteRule ^tin-tuc/trang/(.*)$ index.php?controller=news&p=$1
+
+RewriteRule ^ki-yeu/trang/(.*)$ index.php?controller=ky&p=$1
+
+RewriteRule ^dieu-khoan/trang/(.*)$ index.php?controller=rules&p=$1
+
+##########################################
+
+RewriteRule ^thoat index.php?controller=login&act=logout
+
+RewriteRule ^thanh-toan index.php?controller=checkout
+
+########################################
+#index.php?controller=cart&act=delete&id
+RewriteRule ^xoa-gio-hang/(.*)$ index.php?controller=cart&act=delete&id=$1
+RewriteRule ^nang-cap index.php?controller=cart&act=update"
+RewriteRule ^chon-san-pham/chi-tiet/(.*)$ index.php?controller=cart&act=add&id=$1
+
+
+################################
+RewriteRule ^huy$ index.php?controller=cart&act=destroy
+
+
+### đăng nhập fail
+RewriteRule ^loi-dang-nhap$ index.php?controller=login&act=fail
+
+
